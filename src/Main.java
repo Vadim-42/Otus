@@ -67,7 +67,7 @@ public class Main {
 
                     System.out.printf("Введите цвет животного: %s\n", String.join(",", colorOptions));
                     // Получение цвета животного от пользователя
-                    ColorData selectedColor = (ColorData) enumHelper.getEnumFromString(
+                    ColorData selectedColor = enumHelper.getEnumFromString(
                             ColorData.class,
                             inputScanner,
                             colorOptions,
