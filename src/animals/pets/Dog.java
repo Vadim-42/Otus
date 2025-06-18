@@ -1,18 +1,14 @@
 package animals.pets;
 
 import animals.Animal;
-import data.ColorData;
 
 public class Dog extends Animal {
-    // конструктор
-    public Dog(String name, int age, int weight, ColorData colorData) {
-        super(name, age, weight, colorData);
+    public Dog(String color, String name, int weight, String type, int age) {
+        super(color, name, weight, type, age);
     }
 
-
-    // переопределяем метод
     @Override
-    public void say() {
+    public void say(){
         System.out.println("Гав");
     }
 }

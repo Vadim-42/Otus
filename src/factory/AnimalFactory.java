@@ -1,44 +1,36 @@
 package factory;
 
 import animals.Animal;
+import animals.birds.Duck;
 import animals.pets.Cat;
 import animals.pets.Dog;
-import animals.birds.Duck;
 import data.AnimalTypeData;
 import data.ColorData;
 
-
+import java.util.Arrays;
+import java.util.List;
 
 public class AnimalFactory {
-
-    private String name = "";
-    private int age = -1;
-    private int weight = -1;
-    private ColorData color = null;
-
-
-    public AnimalFactory(String name, int age, int weight, ColorData colorData) {
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-        this.color = colorData;
+    public AnimalFactory(String animalName, int age, int weight, ColorData selectedColor) {
     }
 
-    public Animal create(AnimalTypeData animalTypeData) {
-        switch (animalTypeData) {
-            case CAT: {
-                return new Cat(name, age, weight, color);
-            }
-            case DOG: {
-                return new Dog(name, age, weight, color);
-            }
-            case DUCK: {
-                return new Duck(name, age, weight, color);
-            }
+    public static Animal createAnimal(String type, String name, int age, int weight, String color) {
+        switch (type.toUpperCase()) {
+            case "CAT":
+                return new Cat(color, name, weight, type, age);
+            case "DOG":
+                return new Dog(color, name, weight, type, age);
+            case "DUCK":
+                return new Duck(color, name, weight, type, age);
+            default:
+                throw new IllegalArgumentException("Неизвестный тип животного: " + type);
         }
-
-        throw new
-
-                RuntimeException(String.format("Animal %s not supported", animalTypeData.name().toLowerCase()));
     }
+
+    public static final List<String> ANIMAL_TYPES = Arrays.asList("CAT", "DOG", "DUCK");
+
+    public Animal create(AnimalTypeData selectedAnimalType) {
+        return null;
+    }
+
 }

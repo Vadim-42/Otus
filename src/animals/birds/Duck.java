@@ -9,6 +9,10 @@ public class Duck extends Animal implements Flying {
 
     }
 
+    public Duck(String color, String name, int weight, String type, int age) {
+        super();
+    }
+
     @Override
     public void fly() {
         System.out.println("Я лечу");

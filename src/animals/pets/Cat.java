@@ -1,16 +1,14 @@
 package animals.pets;
 
 import animals.Animal;
-import data.ColorData;
 
 public class Cat extends Animal {
-
-    public Cat(String name, int age, int weight, ColorData colorData) {
-        super(name, age, weight, colorData);
+    public Cat(String color, String name, int weight, String type, int age) {
+        super(color, name, weight, type, age);
     }
 
     @Override
-    public void say() {
+    public void say(){
         System.out.println("Мяу");
     }
 }
